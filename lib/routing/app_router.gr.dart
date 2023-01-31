@@ -29,6 +29,12 @@ class _$AppRouter extends RootStackRouter {
         child: const RegisterPage(),
       );
     },
+    HomeRoute.name: (routeData) {
+      return AdaptivePage<dynamic>(
+        routeData: routeData,
+        child: const HomePage(),
+      );
+    },
   };
 
   @override
@@ -36,7 +42,7 @@ class _$AppRouter extends RootStackRouter {
         RouteConfig(
           '/#redirect',
           path: '/',
-          redirectTo: '/register',
+          redirectTo: '/login',
           fullMatch: true,
         ),
         RouteConfig(
@@ -46,6 +52,10 @@ class _$AppRouter extends RootStackRouter {
         RouteConfig(
           RegisterRoute.name,
           path: '/register',
+        ),
+        RouteConfig(
+          HomeRoute.name,
+          path: '/home',
         ),
       ];
 }
@@ -72,4 +82,16 @@ class RegisterRoute extends PageRouteInfo<void> {
         );
 
   static const String name = 'RegisterRoute';
+}
+
+/// generated route for
+/// [HomePage]
+class HomeRoute extends PageRouteInfo<void> {
+  const HomeRoute()
+      : super(
+          HomeRoute.name,
+          path: '/home',
+        );
+
+  static const String name = 'HomeRoute';
 }

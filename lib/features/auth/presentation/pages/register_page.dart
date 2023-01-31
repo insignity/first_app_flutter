@@ -9,7 +9,7 @@ class RegisterPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-      appBar: AppBar(title: Text('Login'),),
+      appBar: AppBar(title: Text('register'),),
       body: Center(
         child: RegisterForm(),
       ),
